@@ -1,0 +1,277 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B1A126D51B56A89000B4082B /* SUIDGuard.c in Sources */ = {isa = PBXBuildFile; fileRef = B1A126D41B56A89000B4082B /* SUIDGuard.c */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		B1A126CF1B56A89000B4082B /* SUIDGuard.kext */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SUIDGuard.kext; sourceTree = BUILT_PRODUCTS_DIR; };
+		B1A126D31B56A89000B4082B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B1A126D41B56A89000B4082B /* SUIDGuard.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = SUIDGuard.c; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B1A126CB1B56A89000B4082B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B1A126C51B56A89000B4082B = {
+			isa = PBXGroup;
+			children = (
+				B1A126D11B56A89000B4082B /* SUIDGuard */,
+				B1A126D01B56A89000B4082B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		B1A126D01B56A89000B4082B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B1A126CF1B56A89000B4082B /* SUIDGuard.kext */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B1A126D11B56A89000B4082B /* SUIDGuard */ = {
+			isa = PBXGroup;
+			children = (
+				B1A126D41B56A89000B4082B /* SUIDGuard.c */,
+				B1A126D21B56A89000B4082B /* Supporting Files */,
+			);
+			path = SUIDGuard;
+			sourceTree = "<group>";
+		};
+		B1A126D21B56A89000B4082B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B1A126D31B56A89000B4082B /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		B1A126CC1B56A89000B4082B /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		B1A126CE1B56A89000B4082B /* SUIDGuard */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B1A126D81B56A89000B4082B /* Build configuration list for PBXNativeTarget "SUIDGuard" */;
+			buildPhases = (
+				B1A126CA1B56A89000B4082B /* Sources */,
+				B1A126CB1B56A89000B4082B /* Frameworks */,
+				B1A126CC1B56A89000B4082B /* Headers */,
+				B1A126CD1B56A89000B4082B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SUIDGuard;
+			productName = SUIDGuard;
+			productReference = B1A126CF1B56A89000B4082B /* SUIDGuard.kext */;
+			productType = "com.apple.product-type.kernel-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B1A126C61B56A89000B4082B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0640;
+				ORGANIZATIONNAME = "SektionEins GmbH";
+				TargetAttributes = {
+					B1A126CE1B56A89000B4082B = {
+						CreatedOnToolsVersion = 6.4;
+					};
+				};
+			};
+			buildConfigurationList = B1A126C91B56A89000B4082B /* Build configuration list for PBXProject "SUIDGuard" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = B1A126C51B56A89000B4082B;
+			productRefGroup = B1A126D01B56A89000B4082B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B1A126CE1B56A89000B4082B /* SUIDGuard */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B1A126CD1B56A89000B4082B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B1A126CA1B56A89000B4082B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B1A126D51B56A89000B4082B /* SUIDGuard.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		B1A126D61B56A89000B4082B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		B1A126D71B56A89000B4082B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				ONLY_ACTIVE_ARCH = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		B1A126D91B56A89000B4082B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				INFOPLIST_FILE = SUIDGuard/Info.plist;
+				MODULE_NAME = com.sektioneins.SUIDGuard;
+				MODULE_START = SUIDGuard_start;
+				MODULE_STOP = SUIDGuard_stop;
+				MODULE_VERSION = 1.0.0d1;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = kext;
+			};
+			name = Debug;
+		};
+		B1A126DA1B56A89000B4082B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				INFOPLIST_FILE = SUIDGuard/Info.plist;
+				MODULE_NAME = com.sektioneins.SUIDGuard;
+				MODULE_START = SUIDGuard_start;
+				MODULE_STOP = SUIDGuard_stop;
+				MODULE_VERSION = 1.0.0d1;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = kext;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B1A126C91B56A89000B4082B /* Build configuration list for PBXProject "SUIDGuard" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B1A126D61B56A89000B4082B /* Debug */,
+				B1A126D71B56A89000B4082B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B1A126D81B56A89000B4082B /* Build configuration list for PBXNativeTarget "SUIDGuard" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B1A126D91B56A89000B4082B /* Debug */,
+				B1A126DA1B56A89000B4082B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B1A126C61B56A89000B4082B /* Project object */;
+}

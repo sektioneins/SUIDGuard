@@ -15,6 +15,7 @@
 #include <sys/malloc.h>
 #include <sys/imgact.h>
 #include <sys/proc.h>
+#include <sys/systm.h>
 #define CONFIG_MACF 1
 #include <security/mac_framework.h>
 #include <security/mac.h>
@@ -127,7 +128,7 @@ exit:
         vfs_context_rele(ctx);
     }
     
-    return 0;
+    return error;
 }
 
 
@@ -198,11 +199,11 @@ kern_return_t SUIDGuard_stop(kmod_info_t *ki, void *d);
 kern_return_t SUIDGuard_start(kmod_info_t * ki, void *d)
 {
     int r = mac_policy_register(&suidguard_policy_conf, &suidguard_handle, d);
-    return KERN_SUCCESS;
+    return r == 0 ? KERN_SUCCESS : KERN_FAILURE;
 }
 
 kern_return_t SUIDGuard_stop(kmod_info_t *ki, void *d)
 {
-    mac_policy_unregister(suidguard_handle);
-    return KERN_SUCCESS;
+    int r = mac_policy_unregister(suidguard_handle);
+    return r == 0 ? KERN_SUCCESS : KERN_FAILURE;
 }

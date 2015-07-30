@@ -14,8 +14,11 @@ against weaknesses usually involving SUID/SGID binaries.
 	
 Tested with OS X Yosemite 10.10.4.
 
-ATTENTION: an autoloading version of this extension including an installer is available at
-https://github.com/sektioneins/SUIDGuard/releases/download/1.0.0d1/SUIDGuardNG.pkg
+**ATTENTION**: 
+For ease of installation an autoloading version of this extension including an 
+installer is available at
+https://github.com/sektioneins/SUIDGuard/releases/download/1.0.0d1/SUIDGuardNG-Installer.pkg
+https://github.com/sektioneins/SUIDGuard/releases/download/1.0.0d1/SUIDGuardNG.dmg
 (source code for this rewritten extension will follow)
 
 Regards,

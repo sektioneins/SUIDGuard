@@ -64,7 +64,7 @@ struct fileglob {
     void	*fg_vn_data;	/* Per fd vnode data, used for directories */
 };
 
-/* purpose of this hook is to detect execution of SUID/SGID root binaries and
+/* purpose of this hook is to detect execution of SUID/SGID binaries and
    when found it will scan the environment variables for this process in
    kernel memory and overwrite all DYLD_ variables to protect against weaknesses
    in the dyld code */
@@ -100,8 +100,8 @@ int suidguard_cred_label_update_execve(kauth_cred_t old_cred, kauth_cred_t new_c
         goto exit;
     }
     
-    /* now check if this is a SUID/SGID root binary */
-    if ((va.va_mode & (VSUID|VSGID)) && ((va.va_uid == 0) || (va.va_gid == 0))) {
+    /* now check if this is a SUID/SGID binary */
+    if (va.va_mode & (VSUID|VSGID)) {
         
         int i;
         int found = 0;
@@ -118,7 +118,7 @@ int suidguard_cred_label_update_execve(kauth_cred_t old_cred, kauth_cred_t new_c
             tmp += strlen(tmp)+1;
         }
         if (found) {
-            printf("SUIDGuard: found and neutralized DYLD_ environment variable for SUID/SGID root binary\n");
+            printf("SUIDGuard: found and neutralized DYLD_ environment variable for SUID/SGID binary\n");
         }
     }
     

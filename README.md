@@ -1,28 +1,30 @@
-SUIDGuard - A kernel extension adding mitigations to protect SUID/SGID binaries
+SUIDGuard - A kernel extension adding mitigations to OS X to make exploitation harder
 
 Copyright (c) Stefan Esser / SektionEins GmbH, 2015. All rights reserved.  
 stefan.esser@sektioneins.de - https://www.sektioneins.de/
 
-SUIDGuard is a TrustedBSD kernel driver that implements several mitigations to protects
-against weaknesses usually involving SUID/SGID binaries.
+SUIDGuard is a TrustedBSD kernel driver that implements several mitigations to protect
+against weaknesses in the operating system usually abused in exploits.
 
   - protects SUID/SGID root binaries from DYLD_ environment variables
     by overwriting the string DYLD_ with XYLD_
   - protects the O_APPEND flag usually used when opening e.g. logfiles 
     from being disabled by someone with credentials that are different 
 	from those used to open the file
+  - disallows execution of executables without a __PAGEZERO segment
+    (stops NULL page exploits like e.g. tpwn)
 	
-Tested with OS X Yosemite 10.10.4.
+Tested with OS X Yosemite 10.10.5.
 
 **ATTENTION**: 
 For ease of installation an autoloading version of this extension including 
 a signed installer is available at
 
-PKG: https://github.com/sektioneins/SUIDGuard/releases/download/1.0.0d1/SUIDGuardNG-Installer.pkg
+DMG: https://www.suidguard.com/downloads/SUIDGuardNG-106.dmg
 
-DMG: https://github.com/sektioneins/SUIDGuard/releases/download/1.0.0d1/SUIDGuardNG.dmg
+PKG: https://www.suidguard.com/downloads/SUIDGuardNG-106.pkg
 
-(source code for this rewritten extension will follow)
+(source code on GitHub might not always be latest)
 
 Regards,
 Stefan Esser

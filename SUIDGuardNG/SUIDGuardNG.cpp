@@ -1,10 +1,16 @@
 //
-//  SUIDGuard.c
+//  SUIDGuarNGd.cpp
 //  SUIDGuard
 //
 //  Created by Stefan Esser on 15/07/15.
 //  Copyright (c) 2015 SektionEins GmbH. All rights reserved.
 //
+
+#include <IOKit/IOService.h>
+#include <IOKit/IOLib.h>
+
+extern "C" {
+    
 
 #include <mach/mach_types.h>
 #include <sys/types.h>
@@ -19,7 +25,6 @@
 #include <security/mac_framework.h>
 #include <security/mac.h>
 #include <security/mac_policy.h>
-
 
 /* we have to copy these structs because we need access to fg_cred */
 
@@ -64,13 +69,38 @@ struct fileglob {
     void	*fg_vn_data;	/* Per fd vnode data, used for directories */
 };
 
+    
+struct __vm_map
+{
+    void * lck1, * lck2;
+    void * links_prev, * links_next;
+    uint64_t min_offset;
+};
+
+/* For an unknown reason Apple considers proc_task to be a private API.
+   Annoying when you want to create a security product. */
+void * proc_task(void * proc) {
+    uint64_t * p = (uint64_t *)proc;
+    return (void *)p[3];
+}
+
+/* Not a private API but missing from the headers ... */
+void * get_task_map(void* t);
+    
 /* purpose of this hook is to detect execution of SUID/SGID root binaries and
-   when found it will scan the environment variables for this process in
-   kernel memory and overwrite all DYLD_ variables to protect against weaknesses
-   in the dyld code */
+ when found it will scan the environment variables for this process in
+ kernel memory and overwrite all DYLD_ variables to protect against weaknesses
+ in the dyld code */
 int suidguard_cred_label_update_execve(kauth_cred_t old_cred, kauth_cred_t new_cred, struct proc *p, struct vnode *vp, off_t offset, struct vnode *scriptvp, struct label *vnodelabel, struct label *scriptvnodelabel, struct label *execlabel, u_int *csflags, void *macpolicyattr, size_t macpolicyattrlen, int *disjointp)
 {
     struct image_params *imgp;
+
+    /* get the current map and check its min_offet */
+    struct __vm_map * map = (struct __vm_map *) get_task_map(proc_task(p));
+    if (map->min_offset < 0x1000) {
+        printf("SUIDGuard: disallowed execution of binary without a __PAGEZERO segment\n");
+        return 1; /* disallow execution */
+    }
     
     /* we can determine address of image_params structure from the csflags pointer */
     /* some might consider this a dirty hack, but Apple makes it necessary */
@@ -113,18 +143,26 @@ int suidguard_cred_label_update_execve(kauth_cred_t old_cred, kauth_cred_t new_c
         for (i=0; i<imgp->ip_envc; i++) {
             if (strncmp(tmp, "DYLD_", 5) == 0) {
                 tmp[0] = 'X';
-                found = 1;
+                found++;
+                if (found <= 5) {
+                    printf("SUIDGuard: found and neutralized DYLD_ environment variable D%s for SUID/SGID root binary\n", tmp+1);
+                }
             }
             tmp += strlen(tmp)+1;
         }
-        if (found) {
-            printf("SUIDGuard: found and neutralized DYLD_ environment variable for SUID/SGID root binary\n");
+        if (found > 5) {
+            printf("SUIDGuard: found and neutralized more than 5 DYLD_ environment variables for SUID/SGID root binary - skipping others to not flood log file\n");
         }
     }
     
 exit:
     if (ctx) {
         vfs_context_rele(ctx);
+    }
+
+    /* maybe better to disallow execution whenever an error happened before */
+    if (error != 0) {
+        return 1;
     }
     
     return 0;
@@ -139,7 +177,7 @@ int suidguard_cred_check_label_update_execve(kauth_cred_t old, struct vnode *vp,
 }
 
 /* we hook into fcntl() because it is generally a bad idea to allow deactivation
-   of O_APPEND for files opened with the credentials of another user */
+ of O_APPEND for files opened with the credentials of another user */
 int suidguard_file_check_fcntl(kauth_cred_t cred, struct fileglob *fg, struct label *label, int cmd, user_long_t arg)
 {
     /* we only react if someone tries to use F_SETFL */
@@ -198,11 +236,61 @@ kern_return_t SUIDGuard_stop(kmod_info_t *ki, void *d);
 kern_return_t SUIDGuard_start(kmod_info_t * ki, void *d)
 {
     int r = mac_policy_register(&suidguard_policy_conf, &suidguard_handle, d);
-    return KERN_SUCCESS;
+    return r;
 }
 
 kern_return_t SUIDGuard_stop(kmod_info_t *ki, void *d)
 {
-    mac_policy_unregister(suidguard_handle);
-    return KERN_SUCCESS;
+    int r = mac_policy_unregister(suidguard_handle);
+    return r;
+}
+}
+
+class com_sektioneins_driver_SUIDGuard : public IOService
+{
+    OSDeclareDefaultStructors(com_sektioneins_driver_SUIDGuard)
+public:
+    virtual bool init(OSDictionary *dictionary = 0);
+    virtual void free(void);
+    virtual IOService *probe(IOService *provider, SInt32 *score);
+    virtual bool start(IOService *provider);
+    virtual void stop(IOService *provider);
+};
+
+// This required macro defines the class's constructors, destructors,
+// and several other methods I/O Kit requires.
+OSDefineMetaClassAndStructors(com_sektioneins_driver_SUIDGuard, IOService)
+
+// Define the driver's superclass.
+#define super IOService
+
+bool com_sektioneins_driver_SUIDGuard::init(OSDictionary *dict)
+{
+    bool result = super::init(dict);
+    //SUIDGuard_start(NULL, NULL);
+    return result;
+}
+
+void com_sektioneins_driver_SUIDGuard::free(void)
+{
+    //SUIDGuard_stop(NULL, NULL);
+    super::free();
+}
+
+IOService *com_sektioneins_driver_SUIDGuard::probe(IOService *provider,
+                                                SInt32 *score)
+{
+    IOService *result = super::probe(provider, score);
+    return result;
+}
+
+bool com_sektioneins_driver_SUIDGuard::start(IOService *provider)
+{
+    bool result = super::start(provider);
+    return result;
+}
+
+void com_sektioneins_driver_SUIDGuard::stop(IOService *provider)
+{
+    super::stop(provider);
 }

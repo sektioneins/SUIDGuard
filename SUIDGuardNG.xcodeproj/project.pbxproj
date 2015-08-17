@@ -7,17 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B1A126D51B56A89000B4082B /* SUIDGuard.c in Sources */ = {isa = PBXBuildFile; fileRef = B1A126D41B56A89000B4082B /* SUIDGuard.c */; };
+		B1EF6CB61B61C3E9008C5BD4 /* SUIDGuardNG.h in Headers */ = {isa = PBXBuildFile; fileRef = B1EF6CB51B61C3E9008C5BD4 /* SUIDGuardNG.h */; };
+		B1EF6CB81B61C3E9008C5BD4 /* SUIDGuardNG.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B1EF6CB71B61C3E9008C5BD4 /* SUIDGuardNG.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		B1A126CF1B56A89000B4082B /* SUIDGuard.kext */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SUIDGuard.kext; sourceTree = BUILT_PRODUCTS_DIR; };
-		B1A126D31B56A89000B4082B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B1A126D41B56A89000B4082B /* SUIDGuard.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = SUIDGuard.c; sourceTree = "<group>"; };
+		B1EF6CB01B61C3E9008C5BD4 /* SUIDGuardNG.kext */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SUIDGuardNG.kext; sourceTree = BUILT_PRODUCTS_DIR; };
+		B1EF6CB41B61C3E9008C5BD4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B1EF6CB51B61C3E9008C5BD4 /* SUIDGuardNG.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SUIDGuardNG.h; sourceTree = "<group>"; };
+		B1EF6CB71B61C3E9008C5BD4 /* SUIDGuardNG.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = SUIDGuardNG.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		B1A126CB1B56A89000B4082B /* Frameworks */ = {
+		B1EF6CAC1B61C3E9008C5BD4 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -27,35 +29,36 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		B1A126C51B56A89000B4082B = {
+		B1EF6CA61B61C3E9008C5BD4 = {
 			isa = PBXGroup;
 			children = (
-				B1A126D11B56A89000B4082B /* SUIDGuard */,
-				B1A126D01B56A89000B4082B /* Products */,
+				B1EF6CB21B61C3E9008C5BD4 /* SUIDGuardNG */,
+				B1EF6CB11B61C3E9008C5BD4 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		B1A126D01B56A89000B4082B /* Products */ = {
+		B1EF6CB11B61C3E9008C5BD4 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				B1A126CF1B56A89000B4082B /* SUIDGuard.kext */,
+				B1EF6CB01B61C3E9008C5BD4 /* SUIDGuardNG.kext */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		B1A126D11B56A89000B4082B /* SUIDGuard */ = {
+		B1EF6CB21B61C3E9008C5BD4 /* SUIDGuardNG */ = {
 			isa = PBXGroup;
 			children = (
-				B1A126D41B56A89000B4082B /* SUIDGuard.c */,
-				B1A126D21B56A89000B4082B /* Supporting Files */,
+				B1EF6CB51B61C3E9008C5BD4 /* SUIDGuardNG.h */,
+				B1EF6CB71B61C3E9008C5BD4 /* SUIDGuardNG.cpp */,
+				B1EF6CB31B61C3E9008C5BD4 /* Supporting Files */,
 			);
-			path = SUIDGuard;
+			path = SUIDGuardNG;
 			sourceTree = "<group>";
 		};
-		B1A126D21B56A89000B4082B /* Supporting Files */ = {
+		B1EF6CB31B61C3E9008C5BD4 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				B1A126D31B56A89000B4082B /* Info.plist */,
+				B1EF6CB41B61C3E9008C5BD4 /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -63,67 +66,68 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		B1A126CC1B56A89000B4082B /* Headers */ = {
+		B1EF6CAD1B61C3E9008C5BD4 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B1EF6CB61B61C3E9008C5BD4 /* SUIDGuardNG.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		B1A126CE1B56A89000B4082B /* SUIDGuard */ = {
+		B1EF6CAF1B61C3E9008C5BD4 /* SUIDGuardNG */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B1A126D81B56A89000B4082B /* Build configuration list for PBXNativeTarget "SUIDGuard" */;
+			buildConfigurationList = B1EF6CBB1B61C3E9008C5BD4 /* Build configuration list for PBXNativeTarget "SUIDGuardNG" */;
 			buildPhases = (
-				B1A126CA1B56A89000B4082B /* Sources */,
-				B1A126CB1B56A89000B4082B /* Frameworks */,
-				B1A126CC1B56A89000B4082B /* Headers */,
-				B1A126CD1B56A89000B4082B /* Resources */,
+				B1EF6CAB1B61C3E9008C5BD4 /* Sources */,
+				B1EF6CAC1B61C3E9008C5BD4 /* Frameworks */,
+				B1EF6CAD1B61C3E9008C5BD4 /* Headers */,
+				B1EF6CAE1B61C3E9008C5BD4 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = SUIDGuard;
-			productName = SUIDGuard;
-			productReference = B1A126CF1B56A89000B4082B /* SUIDGuard.kext */;
+			name = SUIDGuardNG;
+			productName = SUIDGuardNG;
+			productReference = B1EF6CB01B61C3E9008C5BD4 /* SUIDGuardNG.kext */;
 			productType = "com.apple.product-type.kernel-extension";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		B1A126C61B56A89000B4082B /* Project object */ = {
+		B1EF6CA71B61C3E9008C5BD4 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0640;
 				ORGANIZATIONNAME = "SektionEins GmbH";
 				TargetAttributes = {
-					B1A126CE1B56A89000B4082B = {
+					B1EF6CAF1B61C3E9008C5BD4 = {
 						CreatedOnToolsVersion = 6.4;
 					};
 				};
 			};
-			buildConfigurationList = B1A126C91B56A89000B4082B /* Build configuration list for PBXProject "SUIDGuard" */;
+			buildConfigurationList = B1EF6CAA1B61C3E9008C5BD4 /* Build configuration list for PBXProject "SUIDGuardNG" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 			);
-			mainGroup = B1A126C51B56A89000B4082B;
-			productRefGroup = B1A126D01B56A89000B4082B /* Products */;
+			mainGroup = B1EF6CA61B61C3E9008C5BD4;
+			productRefGroup = B1EF6CB11B61C3E9008C5BD4 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				B1A126CE1B56A89000B4082B /* SUIDGuard */,
+				B1EF6CAF1B61C3E9008C5BD4 /* SUIDGuardNG */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		B1A126CD1B56A89000B4082B /* Resources */ = {
+		B1EF6CAE1B61C3E9008C5BD4 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -133,18 +137,18 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		B1A126CA1B56A89000B4082B /* Sources */ = {
+		B1EF6CAB1B61C3E9008C5BD4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B1A126D51B56A89000B4082B /* SUIDGuard.c in Sources */,
+				B1EF6CB81B61C3E9008C5BD4 /* SUIDGuardNG.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		B1A126D61B56A89000B4082B /* Debug */ = {
+		B1EF6CB91B61C3E9008C5BD4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -186,7 +190,7 @@
 			};
 			name = Debug;
 		};
-		B1A126D71B56A89000B4082B /* Release */ = {
+		B1EF6CBA1B61C3E9008C5BD4 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -217,34 +221,37 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				ONLY_ACTIVE_ARCH = NO;
 				SDKROOT = macosx;
 			};
 			name = Release;
 		};
-		B1A126D91B56A89000B4082B /* Debug */ = {
+		B1EF6CBC1B61C3E9008C5BD4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				INFOPLIST_FILE = SUIDGuard/Info.plist;
-				MODULE_NAME = com.sektioneins.SUIDGuard;
+				CODE_SIGN_IDENTITY = "Developer ID Application";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1.0.6d;
+				INFOPLIST_FILE = SUIDGuardNG/Info.plist;
+				MODULE_NAME = com.sektioneins.kext.SUIDGuardNG;
 				MODULE_START = SUIDGuard_start;
 				MODULE_STOP = SUIDGuard_stop;
-				MODULE_VERSION = 1.0.0d1;
+				MODULE_VERSION = 1.0.6;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = kext;
 			};
 			name = Debug;
 		};
-		B1A126DA1B56A89000B4082B /* Release */ = {
+		B1EF6CBD1B61C3E9008C5BD4 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				INFOPLIST_FILE = SUIDGuard/Info.plist;
-				MODULE_NAME = com.sektioneins.SUIDGuard;
+				CODE_SIGN_IDENTITY = "Developer ID Application";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1.0.6;
+				INFOPLIST_FILE = SUIDGuardNG/Info.plist;
+				MODULE_NAME = com.sektioneins.kext.SUIDGuardNG;
 				MODULE_START = SUIDGuard_start;
 				MODULE_STOP = SUIDGuard_stop;
-				MODULE_VERSION = 1.0.0d1;
+				MODULE_VERSION = 1.0.6;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = kext;
 			};
@@ -253,25 +260,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		B1A126C91B56A89000B4082B /* Build configuration list for PBXProject "SUIDGuard" */ = {
+		B1EF6CAA1B61C3E9008C5BD4 /* Build configuration list for PBXProject "SUIDGuardNG" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				B1A126D61B56A89000B4082B /* Debug */,
-				B1A126D71B56A89000B4082B /* Release */,
+				B1EF6CB91B61C3E9008C5BD4 /* Debug */,
+				B1EF6CBA1B61C3E9008C5BD4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B1A126D81B56A89000B4082B /* Build configuration list for PBXNativeTarget "SUIDGuard" */ = {
+		B1EF6CBB1B61C3E9008C5BD4 /* Build configuration list for PBXNativeTarget "SUIDGuardNG" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				B1A126D91B56A89000B4082B /* Debug */,
-				B1A126DA1B56A89000B4082B /* Release */,
+				B1EF6CBC1B61C3E9008C5BD4 /* Debug */,
+				B1EF6CBD1B61C3E9008C5BD4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = B1A126C61B56A89000B4082B /* Project object */;
+	rootObject = B1EF6CA71B61C3E9008C5BD4 /* Project object */;
 }

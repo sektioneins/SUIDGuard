@@ -3,6 +3,9 @@ SUIDGuard - A kernel extension adding mitigations to OS X to make exploitation h
 Copyright (c) Stefan Esser / SektionEins GmbH, 2015. All rights reserved.  
 stefan.esser@sektioneins.de - https://www.sektioneins.de/
 
+**OFFICIAL WEBSITE**
+If you came here from a media article please checkout the official website https://www.suidguard.com 
+
 SUIDGuard is a TrustedBSD kernel driver that implements several mitigations to protect
 against weaknesses in the operating system usually abused in exploits.
 

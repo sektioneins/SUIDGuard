@@ -7,7 +7,7 @@
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.sektioneins.driver.$(PRODUCT_NAME:rfc1034identifier)</string>
+	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
 	<key>CFBundleName</key>
 	<string>$(PRODUCT_NAME)</string>
 	<key>CFBundlePackageType</key>
@@ -37,7 +37,7 @@
 		</dict>
 	</dict>
 	<key>NSHumanReadableCopyright</key>
-	<string>Copyright © 2015 SektionEins GmbH. All rights reserved.</string>
+	<string>Copyright © 2016 SektionEins GmbH. All rights reserved.</string>
 	<key>OSBundleLibraries</key>
 	<dict>
 		<key>com.apple.kpi.bsd</key>
@@ -46,9 +46,9 @@
 		<string>14.0</string>
 		<key>com.apple.kpi.iokit</key>
 		<string>14.0</string>
-		<key>com.apple.kpi.mach</key>
-		<string>14.0</string>
 		<key>com.apple.kpi.libkern</key>
+		<string>14.0</string>
+		<key>com.apple.kpi.mach</key>
 		<string>14.0</string>
 		<key>com.apple.kpi.unsupported</key>
 		<string>14.0</string>
